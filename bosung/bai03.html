@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+		rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<title>Tìm từ dài nhất</title>
+	<style>
+		body {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+		}
+
+		form {
+			padding: 10px;
+			margin: 30px auto;
+			border-radius: 10px;
+			background-color: #ebebeb;
+			width: 630px;
+			text-align: center;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		}
+
+		form .input {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 30px auto 20px;
+			width: 500px;
+			height: 80px;
+			/* background-color: red; */
+		}
+
+		form .input label {
+			border-radius: 10px 0 0 10px;
+			display: block;
+			width: 95px;
+			height: 70px;
+			background-color: #1c87c9;
+			padding: 5px;
+		}
+
+		form .input label i {
+			font-size: 50px;
+			transform: translate(0px, 8px);
+			color: white;
+		}
+
+		form .input input[type=text] {
+			padding-left: 20px;
+			border-radius: 0 10px 10px 0;
+			border: none;
+			outline: none;
+			width: 400px;
+			height: 80px;
+			font-size: 40px;
+		}
+
+		form .input input[type=text]::placeholder {
+			font-size: 30px;
+		}
+
+		hr {
+			width: 500px;
+			margin-bottom: 50px;
+		}
+
+		form input[type=button] {
+			width: 500px;
+			height: 70px;
+			background-color: #1c87c9;
+			color: white;
+			border: none;
+			border-radius: 10px;
+			font-size: 35px;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		h2 {
+			text-align: left;
+			padding-left: 62px;
+			color: #e0c097;
+		}
+
+		h3 {
+			text-align: left;
+			padding-left: 62px;
+			color: #fd1717;
+		}
+
+		#result {
+			color: #fd1717;
+		}
+	</style>
+</head>
+
+<body>
+	<form action="">
+		<h1>Luyện tập Javascript</h1>
+		<input type="button" value="Submit" id="btn-submit">
+		<h3 id="get">A front-end developer is a type of software developer who specializes in creating</h3>
+		<h2>Kết quả trả về</h2>
+		<h2 id="result">result</h2>
+	</form>
+
+	<script>
+		document.getElementById('btn-submit').onclick = function () {
+			let get = document.getElementById('get').textContent;
+			let arrString = get.split(" ");
+			let maxString = '';
+			arrString.forEach((char) => {
+				if (char.length > maxString.length) {
+					maxString = char;
+				}
+			});
+			document.getElementById('result').textContent = maxString;
+		}
+	</script>
+</body>
+
+</html>

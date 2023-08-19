@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+	<style>
+		form table {
+			border: 1px solid green;
+		}
+
+		form table tr,
+		form table td {
+			border: 1px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Bài 3 -->
+	<h1>Tìm các số chia hết cho 6 và 9</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<label>Nhập một số</label>
+				</td>
+				<td>
+					<input type="text" id="input_number" style="width: 40px;">
+					<input type="button" value="In" id="button">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<p id="show_text"></p>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		document.getElementById('button').onclick = function () {
+			let number = document.getElementById('input_number').value;
+			let text = `Các số từ 1 đến ${number} chia hết cho 6 và 9 là: `;
+			if (isFinite(number)) {
+				for (i = 1; i <= number; ++i) {
+					if ((i % 9 == 0) && (i % 6 == 0)) text += `${i}, `;
+				}
+			} else {
+				text = "Không hợp lệ";
+			}
+			document.getElementById("show_text").innerHTML = text;
+		};
+	</script>
+</body>
+
+</html>

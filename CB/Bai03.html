@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+	<style>
+		form table {
+			border: 1px solid green;
+		}
+
+		form table tr,
+		form table td {
+			border: 1px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Bài 3 -->
+	<h1>Kết quả cuối năm học</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<label>Điểm trung bình</label>
+				</td>
+				<td>
+					<input type="number" id="input_score">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Kết quả</label>
+				</td>
+				<td>
+					<p id="show_text"></p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="Xuất kết quả" id="button">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		document.getElementById('button').onclick = function () {
+			let score = document.getElementById('input_score').value;
+			if (Number(score) < 5) {
+				document.getElementById('show_text').innerHTML = "Ở lại lớp";
+			} else {
+				document.getElementById('show_text').innerHTML = "Được lên lớp";
+			}
+		}
+	</script>
+</body>
+
+</html>

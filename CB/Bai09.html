@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+	<style>
+		form table {
+			border: 1px solid green;
+		}
+
+		form table tr,
+		form table td {
+			border: 1px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Bài 3 -->
+	<h1>Tìm số đầu tiên chia hết cho 5 và 7</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<label for="">Nhập số từ</label>
+					<input type="text" id="input_number1" style="width: 40px;">
+					<label for="">đến số</label>
+					<input type="text" id="input_number2" style="width: 40px;">
+				</td>
+				<td>
+					<input type="button" value="In" id="button">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<p id="show_text"></p>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		document.getElementById('button').onclick = function () {
+			let firstNumber = document.getElementById('input_number1').value;
+			let lastNumber = document.getElementById('input_number2').value;
+
+			let text = `Số đầu tiên trong khoảng ${firstNumber} đến ${lastNumber} chia hết cho 5 và 7 là: `;
+			if (isFinite(firstNumber) && isFinite(lastNumber)) {
+				for (i = Number(firstNumber); i <= Number(lastNumber); ++i) {
+					if ((i % 5 == 0) && (i % 7 == 0)) {
+						text += `${i}`;
+						break;
+					}
+				}
+			} else {
+				text = "Không hợp lệ";
+			}
+			document.getElementById("show_text").innerHTML = text;
+		};
+	</script>
+</body>
+
+</html>

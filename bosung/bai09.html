@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+		rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<title>Đếm chữ vui vẻ</title>
+	<style>
+		body {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+		}
+
+		form {
+			padding: 10px;
+			margin: 30px auto;
+			border-radius: 10px;
+			background-color: #ebebeb;
+			width: 630px;
+			text-align: center;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		}
+
+		form .input {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 30px auto 20px;
+			width: 500px;
+			height: 80px;
+			/* background-color: red; */
+		}
+
+		form .input label {
+			border-radius: 10px 0 0 10px;
+			display: block;
+			width: 95px;
+			height: 70px;
+			background-color: #1c87c9;
+			padding: 5px;
+		}
+
+		form .input label i {
+			font-size: 50px;
+			transform: translate(0px, 8px);
+			color: white;
+		}
+
+		form .input input {
+			padding-left: 20px;
+			border-radius: 0 10px 10px 0;
+			border: none;
+			outline: none;
+			width: 400px;
+			height: 80px;
+			font-size: 40px;
+		}
+
+		form .input input::placeholder {
+			font-size: 30px;
+		}
+
+		hr {
+			width: 500px;
+			margin-bottom: 50px;
+		}
+
+		form input[type=button] {
+			width: 500px;
+			height: 70px;
+			background-color: #1c87c9;
+			color: white;
+			border: none;
+			border-radius: 10px;
+			font-size: 35px;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		h2 {
+			text-align: left;
+			padding-left: 62px;
+			color: #e0c097;
+		}
+
+		#result {
+			color: #fd1717;
+		}
+	</style>
+</head>
+
+<body>
+	<form action="">
+		<h1>Luyện tập Javascript</h1>
+		<div class="input">
+			<label for="input_string">
+				<i class='bx bxs-rocket'></i>
+			</label>
+			<input type="text" name="input_string" id="input_string" placeholder="Nhập vào dãy chữ">
+		</div>
+		<div class="input">
+			<label for="input_char">
+				<i class='bx bxs-rocket'></i>
+			</label>
+			<input type="text" name="input_char" id="input_char" placeholder="Nhập vào kí tự cần đếm">
+		</div>
+		<hr>
+		<input type="button" value="Submit" id="btn-submit">
+		<h2>Kết quả trả về</h2>
+		<h2 id="result">result</h2>
+	</form>
+
+	<script>
+		document.getElementById('btn-submit').onclick = () => {
+			let getString = document.getElementById('input_string').value;
+			let getChar = document.getElementById('input_char').value;
+			if (!getString || !getChar) {
+				document.getElementById('result').textContent = 'Nhập vào không hợp lệ';
+			} else {
+				document.getElementById('result').textContent = `${(getString.split(getChar).length - 1)} lần xuất hiện`;
+			}
+		}
+	</script>
+</body>
+
+</html>

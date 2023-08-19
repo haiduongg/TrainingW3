@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+	<style>
+		form table {
+			border: 1px solid green;
+		}
+
+		form table tr,
+		form table td {
+			border: 1px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Bài 2 -->
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<p id="show_text"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Nhập tên bạn:</label>
+					<input type="text" id="input_text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="Xuất câu chào" id="button">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		document.body.onload = function () {
+			let input = prompt("Hãy nhập tên của bạn");
+			document.getElementById('show_text').innerHTML = 'Xin chào ' + input;
+		}
+
+		document.getElementById('button').onclick = function () {
+			let valueinput = document.getElementById('input_text').value;
+			document.getElementById('show_text').innerHTML = 'Xin chào ' + valueinput;
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+	<style>
+		form table {
+			border: 1px solid green;
+		}
+
+		form table tr,
+		form table td {
+			border: 1px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Bài 3 -->
+	<h1>Tính tiền thưởng cuối năm</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<label>Tiền lương</label>
+				</td>
+				<td>
+					<input type="number" id="input_luong">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Xếp loại</label>
+				</td>
+				<td>
+					<select name="" id="dropdown">
+						<option value="1">Loại A</option>
+						<option value="2">Loại B</option>
+						<option value="3">Loại C</option>
+						<option value="4">Loại D</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="Tính" id="button">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<p id="show_text"></p>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		document.getElementById('button').onclick = function () {
+			let luong = document.getElementById('input_luong').value;
+			let xeploai = document.getElementById('dropdown').value;
+			
+			if (xeploai == 1) {
+				document.getElementById('show_text').innerHTML = `Tiền thưởng là: ${luong * 2} đồng`;
+			} else if (xeploai == 2) {
+				document.getElementById('show_text').innerHTML = `Tiền thưởng là: ${luong * 1.8} đồng`;
+			} else if (xeploai == 3) {
+				document.getElementById('show_text').innerHTML = `Tiền thưởng là: ${luong * 1.2} đồng`;
+			} else {
+				document.getElementById('show_text').innerHTML = `Tiền thưởng là: ${luong * 0.8} đồng`;
+			}
+		}
+	</script>
+</body>
+
+</html>

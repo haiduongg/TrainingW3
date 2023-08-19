@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+	<style>
+		form table {
+			border: 1px solid green;
+		}
+
+		form table tr,
+		form table td {
+			border: 1px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Bài 3 -->
+	<h1>Kết quả cuối năm học</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<label>Điểm trung bình HKI</label>
+				</td>
+				<td>
+					<input type="number" id="hocki1" max="10" min="0">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Điểm trung bình HKII</label>
+				</td>
+				<td>
+					<input type="number" id="hocki2" max="10" min="0">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Điểm trung bình cuối năm</label>
+				</td>
+				<td>
+					<p id="show_diem_cuoinam"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Xếp loại</label>
+				</td>
+				<td>
+					<p id="show_text"></p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="Xuất xếp loại" id="button">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		document.getElementById('button').onclick = function () {
+			let hocki1 = document.getElementById('hocki1').value;
+			let hocki2 = document.getElementById('hocki2').value;
+			let cuoinam = (Number(hocki1) + (Number(hocki2)*2))/3;
+			document.getElementById('show_diem_cuoinam').innerHTML = cuoinam;
+			if (cuoinam >= 9) {
+				document.getElementById('show_text').innerHTML = "Giỏi";
+			} else if (cuoinam >= 7) {
+				document.getElementById('show_text').innerHTML = "Khá";
+			} else if (cuoinam >= 5) {
+				document.getElementById('show_text').innerHTML = "Trung bình";
+			} else {
+				document.getElementById('show_text').innerHTML = "Yếu";
+			}
+		}
+	</script>
+</body>
+
+</html>

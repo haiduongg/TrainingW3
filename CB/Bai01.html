@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+	<style>
+		form table {
+			border: 1px solid green;
+		}
+
+		form table tr,
+		form table td {
+			border: 1px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Bài 1-->
+	<form action="">
+		<table>
+			<tr>
+				<td>
+					<label>Nhập tên bạn:</label>
+					<input type="text" id="input">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="button">Xuất câu chào</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<script>
+		const $ = document.getElementById.bind(document);
+
+		$('button').onclick = function () {
+			let value = $('input').value;
+			alert(`Chào bạn ${value}`);
+		}
+	</script>
+</body>
+
+</html>
