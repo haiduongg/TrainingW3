@@ -3,22 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Bảng thông tin cá nhân</title>
+	<style>
+		table {
+			border: 1px solid black;
+		}
+		thead,tbody,tr,th,td {
+			border: 1px solid black;
+		}
+	</style>
 </head>
-<body>
-	<header>
-		<h1>Đây là trang web của tôi</h1>
-	</header>
-			<span>Chào mừng đến với trang web của tôi. Đây là một ví dụ cách sử dụng thẻ img để hiển thị hình ảnh trên trang web</span>
-			<br></br>
-			<!-- <figure> -->
-				<img src="/SESSION1/img/z4449519853646_7791eb1d76a3303b0f7a3c0a414f302e.jpg" alt="not found" style="width: 20%; height: 20%;">
-			<!-- </figure> -->
-			<br></br>
-			<span>Trên đây là một hình ảnh ngẫu nhiên được tải từ trang web Picsum. Bạn có thể thay đổi kích thước hình ảnh bằng cách chỉnh độ rộng và chiều cao trong thuộc tính `width` và `height` của thẻ ``. Bạn cũng có thể thêm một mô tả hình ảnh bằng thuộc tính `alt`.
-			</span>
-		</article>
-	</main>
 
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Tên</th>
+				<th>Tuổi</th>
+				<th>Địa chỉ</th>
+				<th>Số điện thoại</th>
+				<th>Lương</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>Nguyễn Văn A</td>
+				<td>30</td>
+				<td>Hà Nội</td>
+				<td>0987654321</td>
+				<td>10 triệu</td>
+			</tr>
+			<tr>
+				<td>Trần Thị B</td>
+				<td>25</td>
+				<td>Hồ Chí Minh</td>
+				<td>0123456789</td>
+				<td>8 triệu</td>
+			</tr>
+			<tr>
+				<td>Phạm Văn C</td>
+				<td>35</td>
+				<td>Đà Nẵng</td>
+				<td>0369123456</td>
+				<td>12 triệu</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
